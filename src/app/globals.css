@@ -1,0 +1,500 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 14% 2%, rgba(232, 122, 46, 0.075), transparent 21%),
+    radial-gradient(circle at 86% 12%, rgba(207, 100, 30, 0.16), transparent 27%),
+    #11100e;
+  color: #f4efe7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.content-dot-bg {
+  background-image: radial-gradient(rgba(214, 92, 56, 0.08) 1px, transparent 1.35px);
+  background-size: 18px 18px;
+  background-position: 0 0;
+}
+
+.profile-dot-bg {
+  background-image: radial-gradient(rgba(164, 164, 164, 0.08) 1px, transparent 1.35px);
+  background-size: 16px 16px;
+  background-position: 0 0;
+}
+
+.content-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #7a7a7a rgba(255, 255, 255, 0.08);
+}
+
+.content-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.content-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.content-scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: linear-gradient(180deg, #8a8a8a 0%, #6f6f6f 100%);
+  border: 2px solid rgba(17, 16, 14, 0.95);
+}
+
+.content-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #9a9a9a 0%, #7c7c7c 100%);
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: riseIn 460ms ease both;
+}
+
+@keyframes menuSheetIn {
+  from {
+    opacity: 0.2;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-sheet-enter {
+  animation: menuSheetIn 220ms ease-out both;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pageSlideUpOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes pageSlideUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageScaleFadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes pageScaleFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pageBlurFadeOut {
+  from {
+    opacity: 1;
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    filter: blur(8px);
+  }
+}
+
+@keyframes pageBlurFadeIn {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes pageSlideLeftOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes pageSlideLeftIn {
+  from {
+    opacity: 0;
+    transform: translateX(38px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pageSlideRightOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+}
+
+@keyframes pageSlideRightIn {
+  from {
+    opacity: 0;
+    transform: translateX(-38px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pageZoomOutOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes pageZoomOutIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pageRotateFadeOut {
+  from {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: rotate(-4deg) scale(0.98);
+  }
+}
+
+@keyframes pageRotateFadeIn {
+  from {
+    opacity: 0;
+    transform: rotate(4deg) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes pageFlipXOut {
+  from {
+    opacity: 1;
+    transform: perspective(1100px) rotateX(0deg);
+  }
+  to {
+    opacity: 0;
+    transform: perspective(1100px) rotateX(20deg);
+  }
+}
+
+@keyframes pageFlipXIn {
+  from {
+    opacity: 0;
+    transform: perspective(1100px) rotateX(-20deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1100px) rotateX(0deg);
+  }
+}
+
+@keyframes pageFlipYOut {
+  from {
+    opacity: 1;
+    transform: perspective(1100px) rotateY(0deg);
+  }
+  to {
+    opacity: 0;
+    transform: perspective(1100px) rotateY(-24deg);
+  }
+}
+
+@keyframes pageFlipYIn {
+  from {
+    opacity: 0;
+    transform: perspective(1100px) rotateY(24deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1100px) rotateY(0deg);
+  }
+}
+
+@keyframes pageSwirlFadeOut {
+  from {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: rotate(-8deg) scale(0.95);
+    filter: blur(5px);
+  }
+}
+
+@keyframes pageSwirlFadeIn {
+  from {
+    opacity: 0;
+    transform: rotate(8deg) scale(1.05);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes pageSkewFadeOut {
+  from {
+    opacity: 1;
+    transform: skewX(0deg) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: skewX(-8deg) scale(0.98);
+  }
+}
+
+@keyframes pageSkewFadeIn {
+  from {
+    opacity: 0;
+    transform: skewX(8deg) scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: skewX(0deg) scale(1);
+  }
+}
+
+.page-transition {
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+  will-change: transform, opacity, filter;
+}
+
+.page-transition--idle {
+  animation: none;
+}
+
+.page-transition--fade.page-transition--exit {
+  animation-name: pageFade;
+  animation-duration: 220ms;
+}
+
+.page-transition--fade.page-transition--enter {
+  animation-name: pageFadeIn;
+  animation-duration: 310ms;
+}
+
+.page-transition--slide-up.page-transition--exit {
+  animation-name: pageSlideUpOut;
+  animation-duration: 220ms;
+}
+
+.page-transition--slide-up.page-transition--enter {
+  animation-name: pageSlideUpIn;
+  animation-duration: 310ms;
+}
+
+.page-transition--scale-fade.page-transition--exit {
+  animation-name: pageScaleFadeOut;
+  animation-duration: 220ms;
+}
+
+.page-transition--scale-fade.page-transition--enter {
+  animation-name: pageScaleFadeIn;
+  animation-duration: 310ms;
+}
+
+.page-transition--blur-fade.page-transition--exit {
+  animation-name: pageBlurFadeOut;
+  animation-duration: 220ms;
+}
+
+.page-transition--blur-fade.page-transition--enter {
+  animation-name: pageBlurFadeIn;
+  animation-duration: 310ms;
+}
+
+.page-transition--slide-left.page-transition--exit {
+  animation-name: pageSlideLeftOut;
+  animation-duration: 240ms;
+}
+
+.page-transition--slide-left.page-transition--enter {
+  animation-name: pageSlideLeftIn;
+  animation-duration: 340ms;
+}
+
+.page-transition--slide-right.page-transition--exit {
+  animation-name: pageSlideRightOut;
+  animation-duration: 240ms;
+}
+
+.page-transition--slide-right.page-transition--enter {
+  animation-name: pageSlideRightIn;
+  animation-duration: 340ms;
+}
+
+.page-transition--zoom-out.page-transition--exit {
+  animation-name: pageZoomOutOut;
+  animation-duration: 250ms;
+}
+
+.page-transition--zoom-out.page-transition--enter {
+  animation-name: pageZoomOutIn;
+  animation-duration: 360ms;
+}
+
+.page-transition--rotate-fade.page-transition--exit {
+  animation-name: pageRotateFadeOut;
+  animation-duration: 250ms;
+}
+
+.page-transition--rotate-fade.page-transition--enter {
+  animation-name: pageRotateFadeIn;
+  animation-duration: 350ms;
+}
+
+.page-transition--flip-x.page-transition--exit {
+  animation-name: pageFlipXOut;
+  animation-duration: 260ms;
+  transform-origin: center;
+}
+
+.page-transition--flip-x.page-transition--enter {
+  animation-name: pageFlipXIn;
+  animation-duration: 360ms;
+  transform-origin: center;
+}
+
+.page-transition--flip-y.page-transition--exit {
+  animation-name: pageFlipYOut;
+  animation-duration: 260ms;
+  transform-origin: center;
+}
+
+.page-transition--flip-y.page-transition--enter {
+  animation-name: pageFlipYIn;
+  animation-duration: 360ms;
+  transform-origin: center;
+}
+
+.page-transition--swirl-fade.page-transition--exit {
+  animation-name: pageSwirlFadeOut;
+  animation-duration: 260ms;
+}
+
+.page-transition--swirl-fade.page-transition--enter {
+  animation-name: pageSwirlFadeIn;
+  animation-duration: 380ms;
+}
+
+.page-transition--skew-fade.page-transition--exit {
+  animation-name: pageSkewFadeOut;
+  animation-duration: 250ms;
+}
+
+.page-transition--skew-fade.page-transition--enter {
+  animation-name: pageSkewFadeIn;
+  animation-duration: 350ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .menu-sheet-enter {
+    animation: none;
+  }
+}
